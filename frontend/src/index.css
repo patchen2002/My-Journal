@@ -1,0 +1,315 @@
+/*General*/
+#root{
+  height: 100%;
+}
+body, .entryInput, .titleInput {
+  margin: 0;
+  /* height: 100vh; */
+  font-size: 1rem;
+  font-family: 'Times New Roman', Times, serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*Layout*/
+header{
+  height: 6vh;
+  min-height: 3rem;
+  min-width: 25rem;
+  /*grid-area: header;*/ /* Links header to grid-area header */
+}
+main{
+  height: 100%;
+  /* grid-area: main; */
+
+}
+footer{
+  height: 4vh;
+  min-height: 2.25rem;
+  /* grid-area: footer; */
+  background-color: #ffffff;
+  color: #808080;
+}
+
+/*Common Classes*/
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+a{
+  text-decoration: none;
+}
+
+/*Header Bar*/
+header{
+  background-color: #ffffff;
+}
+a.brandTitle{
+  font-size: 1.75rem;
+}
+header a{
+  padding: 1rem;
+  opacity: 0.9;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #644536;
+  margin: 0.75rem;
+}
+button{
+  margin: 0 1rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  font-family: 'Times New Roman', Times, serif;
+  border-radius: 0.2rem;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: pointer;
+  border-style: none;
+}
+button.join{
+  background-color: #644536;
+  color: #ffffff;
+  opacity: 0.9;
+}
+button.join:hover, header a:hover{
+  opacity: 1;
+}
+@media screen and (max-width: 55rem) and (min-width: 45rem){
+  header{
+    background-color: #ffffff;
+  }
+  a.brandTitle{
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #644536;
+  }
+  a.personalEntries, a.sharedEntries{
+    font-size: 1rem;
+    font-weight: bold;
+    color: #644536;
+    margin: 0.25rem;
+  }
+  header a{
+    padding: 0.5rem;
+  }
+  button{
+    margin: 0 0.25rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 0.2rem;
+    font-weight: bold;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    cursor: pointer;
+    border-style: none;
+  }
+}
+@media screen and (max-width: 45rem){
+  header{
+    background-color: #ffffff;
+  }
+  a.brandTitle{
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #644536;
+  }
+  a.personalEntries, a.sharedEntries{
+    font-size: 1rem;
+    font-weight: bold;
+    color: #644536;
+    margin: 0.2rem;
+  }
+  header a{
+    padding: 0.2rem;
+  }
+  button{
+    margin: 0 0.2rem;
+    padding: 0.5rem 0.25rem;
+    font-size: 0.75rem;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 0.2rem;
+    font-weight: bold;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    cursor: pointer;
+    border-style: none;
+  }
+}
+
+/*Main section*/
+.row.top{
+  align-items: flex-start;
+}
+.col-1{
+  display: table;
+  background-color: #c4a381;
+  flex: 1 1 30rem;
+  text-align: center;
+  min-height: 90vh;
+  height: 100%;
+}
+.col-1.entries{
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+}
+.col-2{
+  display: table;
+  background-color: #EEF1BD;
+  flex: 1 1 30rem;
+  text-align: center;
+  min-height: 90vh;
+  height: 100%;
+}
+.content, .align{
+  display: table-cell;
+  vertical-align: middle;
+}
+.textbox{
+  display: table;
+  border-radius: 0.5rem;
+  box-shadow: 1rem 1rem #808080;
+  width: 50%;;
+  height: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffffff;
+  color: #644536;
+}
+.textbox.profile{
+  height: 55%;
+  max-width: 40rem;
+}
+p{
+  margin: 10%;
+}
+.frontPic{
+  margin-bottom: -2rem;
+  width: 10rem;
+  height: 10rem;
+}
+.loginbox{
+  display: table;
+  border-radius: 0.5rem;
+  box-shadow: 1rem 1rem #808080;
+  width: 40%;;
+  height: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffffff;
+  color: #644536;
+}
+.signupbox{
+  display: table;
+  border-radius: 0.5rem;
+  box-shadow: 1rem 1rem #808080;
+  width: 45%;;
+  height: 55%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffffff;
+  color: #644536;
+}
+.postbox{
+  background-color: #ffffff;
+  height: 40vh;
+  width: 20vw;
+  border-radius: 1rem;
+  align-items: center;
+  text-align: center;
+  opacity: 1;
+}
+.postbox:hover{
+  opacity: 0.9;
+}
+.previewText{
+  text-decoration: none;
+  color: #644536;
+}
+.previewText h1{
+  margin-bottom: -4vh;
+}
+.previewText p{
+  margin-bottom: -4vh;
+}
+.margin{
+  margin: 3vh 2.3vw;
+  padding: 0;
+}
+.entryGraphic{
+  height: 26vh;
+  width: 19vw;
+  border-radius: 1rem;
+  margin-bottom: -7vh;
+}
+.positioned{
+  position: fixed;
+  bottom: 3vh;
+  right: 0.5vw;
+}
+.newEntry{
+  color: #644536;
+  opacity: 0.9;
+}
+.newEntry.black{
+  color:#000000;
+}
+.newEntry.black.post{
+  margin: 1vh 1vw;
+}
+.newEntry:hover{
+  opacity: 1;
+}
+.pent-header{
+  background-color: #c4a381;
+  margin: 0;
+  padding: 2vh;
+  text-align: center;
+}
+.titleInput{
+  width: 80vw;
+  height: 4vh;
+  margin: 0 1vw;
+  font-size: 1.25rem;
+}
+.titleInput:focus, .entryInput:focus{
+  outline: none;
+}
+.entryInput{
+  width: 80vw;
+  height: 60vh;
+  margin: 0 1vw;
+  font-size: 1.25rem;
+}
+.postForm h2{
+  margin: 0.5rem;
+}
+.bottomEntry{
+  justify-content: center;
+  display: flex;
+}
+.radioTable{
+  display: table;
+}
+.radioCenter{
+  display: table-cell;
+  vertical-align: middle;
+}
+.radioEntry{
+  margin-left: auto;
+  margin-right: auto;
+}
+.deleteButton{
+  margin: 0.5rem;
+  color: #FF0000;
+}
+
+/*Footer*/
+.row.center{
+  align-items: center;
+  justify-content: center;
+}
