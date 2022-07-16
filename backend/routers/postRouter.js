@@ -67,7 +67,6 @@ postRouter.patch('/:id', async (req, res) => {
         const post = await Post.findById(req.params.id);
         if (post.shared !== req.body.shared) {
             if (req.body.shared == "true") {
-                console.log("hello1");
                 const sharedUser = await User.findById("shared-posts@example.com");
                 if (sharedUser.allPosts.indexOf(post._id) === -1) {
                     const sharedHolderArray = [post._id];
@@ -79,7 +78,6 @@ postRouter.patch('/:id', async (req, res) => {
                     );
                 }
             } else {
-                console.log("hello2");
                 const sharedUser = await User.findById("shared-posts@example.com");
                 const index = sharedUser.allPosts.indexOf(post._id);
                 sharedUser.allPosts.splice(index, 1);
