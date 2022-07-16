@@ -22,7 +22,7 @@ export default function HomeScreen() {
                         userInfo ? (
                             <Link className="personalEntries" to="/personalEntries">Personal Entries</Link>
                         ) : (
-                            <p></p>
+                            <></>
                         )
                     }
                 </div>

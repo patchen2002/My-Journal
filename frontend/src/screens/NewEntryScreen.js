@@ -33,7 +33,7 @@ export default function NewEntryScreen() {
                         userInfo ? (
                             <Link className="personalEntries" to="/personalEntries">Personal Entries</Link>
                         ) : (
-                            <p></p>
+                            <></>
                         )
                     }
                 </div>
