@@ -66,7 +66,8 @@ postRouter.patch('/:id', async (req, res) => {
         //Find and update the post
         const post = await Post.findById(req.params.id);
         if (post.shared !== req.body.shared) {
-            if (req.body.shared) {
+            if (req.body.shared == "true") {
+                console.log("hello1");
                 const sharedUser = await User.findById("shared-posts@example.com");
                 if (sharedUser.allPosts.indexOf(post._id) === -1) {
                     const sharedHolderArray = [post._id];
@@ -78,6 +79,7 @@ postRouter.patch('/:id', async (req, res) => {
                     );
                 }
             } else {
+                console.log("hello2");
                 const sharedUser = await User.findById("shared-posts@example.com");
                 const index = sharedUser.allPosts.indexOf(post._id);
                 sharedUser.allPosts.splice(index, 1);
@@ -101,8 +103,16 @@ postRouter.delete('/:id', async (req, res) => {
     try {
         //Finding the desired deleted post
         const deletedPost = await Post.findById(req.params.id);
-        //Finding the original poster
+        //Finding the original poster and the shared poster
+        const sharedUser = await User.findById("shared-posts@example.com");
         const user = await User.findById(deletedPost.senderEmail);
+        //Deleting the post from sharedUser.allPosts
+        if (deletedPost.shared) {
+            const index = sharedUser.allPosts.indexOf(deletedPost._id);
+            sharedUser.allPosts.splice(index, 1);
+            sharedUser.allPosts = sharedUser.allPosts.filter(x => x !== null);
+            sharedUser.save();
+        }
         //Deleting the post from user.allPosts
         const index = user.allPosts.indexOf(deletedPost._id);
         user.allPosts.splice(index, 1);
